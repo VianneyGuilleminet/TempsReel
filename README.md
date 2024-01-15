@@ -18,9 +18,20 @@ Then the four task are defined. We have :
 ### Task Scheduling
 In the following paragraph we are going to define the priority of each task as well as their period. We will also introduce the execution time computed from a set of 10 trials to determine if the period was wisely chosen and to see if the four tasks are indeed shcedulabale using the formula studied in class
 
-
-To study the schedulablity of the four tasks, we use the following formula :
+- Firstly, The print task will have top priority as it is the one that state if the system is "operational". Its period will be of 1 second. After ten iterations, I calculated an approximative execution time of 25.749 milliseconds
+- Secondly the Binary Search will have the second highest priority but with a period of 4 seconds to compensate for its execution time that should be the longest. After a batch of ten tests, I calculated the execution time to be 28.589 milliseconds
+- Thirdly the multplication task will have the third highest priority. Its period will be of 3 seconds. After the batch of tests, I computed an average execution time of 22.567 milliseconds
+- Lastly, the temperature conversion task will have the lowest priority and a period time of 2 seconds. After the ten tests, the averrage execution time computed was of 23.584 milliseconds.
+  
+Now, to study the schedulablity of the four tasks, we use the following formula :
 $$\ \sum_{i=1}^n \frac{C_i}{T_i} \le 1 $$
+
+By replacing the expression with or four tasks and their period and their maximum execution time, we get :
+$$\ \frac{25.749 \times 10^{-3}}{1} + \frac{28.589  \times 10^{-3}}{2} + \frac{22.567 \times 10^{-3}}{3} + \frac{23.584  \times 10^{-3}}{4} \le 1 $$
+$$\ \iff 0.05346 \le 1 $$
+
+The inequality is respected, the task are schedulable.
+
 
 
 
